@@ -31,7 +31,7 @@ app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 #
 
 try:
-    with open(r"D:/Kunal_Stock_deploy/Kunal_DBDA_Work/model/ml_model.pkl", 'rb') as ML:
+    with open(r"model/ml_model.pkl", 'rb') as ML:
         ml_model = pickle.load(ML)
     print("ml_model.pkl loaded successfully")
 except FileNotFoundError:
@@ -40,7 +40,7 @@ except Exception as e:
     print(f"Error loading ml_model.pkl: {e}")
 
 try:
-    with open(r"D:/Kunal_Stock_deploy/Kunal_DBDA_Work/model/xgb_model.pkl", 'rb') as XGB:
+    with open(r"model/xgb_model.pkl", 'rb') as XGB:
         xgb_model = pickle.load(XGB)
     print("xgb_model.pkl loaded successfully")
 except FileNotFoundError:
@@ -50,7 +50,7 @@ except Exception as e:
 
 
 try:
-    dl_model=load_model(r"D:/Kunal_Stock_deploy/Kunal_DBDA_Work/model/Lstm_model.h5")
+    dl_model=load_model(r"model/Lstm_model.h5")
     print("Lstm_model.h5 loaded successfully")
 except FileNotFoundError:
     print("Error: Lstm_model.h5 not found.")
